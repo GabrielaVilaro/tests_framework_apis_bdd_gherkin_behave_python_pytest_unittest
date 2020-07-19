@@ -1,5 +1,9 @@
+import json
+
+import requests
 from behave import *
 from functions.Functions import Functions
+from functions.Inicializar import Inicializar
 
 use_step_matcher("re")
 
@@ -67,5 +71,25 @@ class StepsDefinitions:
     @then("I compare the json File (.*) with response")
     def step_impl(self, file):
         Functions.expected_results_value(self, file)
+
+    @when("I login in Twitter App")
+    def step_impl(self):
+        body = {"grant_type": "client_credentials"}
+        response = requests.post(Inicializar.API_hostAddressBase + "oauth2/token",
+                                 auth=(Inicializar.api_key, Inicializar.api_secret), data=body)
+        Autorization_response = json.loads(response.text)
+        print(Autorization_response['access_token'])
+        Inicializar.API_headers["Authorization"] = "Bearer " + Autorization_response['access_token']
+
+    @then("I compare response in entity (.*) is (.*)")
+    def step_impl(self, entity, expected):
+        Functions.new_compare_entity_values(self, entity, expected)
+
+    @then("I compare (.*) show the values (.*)")
+    def step_impl(self, entity, expected):
+        for row in self.table:
+            entity = row['Entity']
+            value = row['Value']
+            Functions.new_compare_entity_values(self, entity, value)
 
 

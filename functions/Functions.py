@@ -1,8 +1,7 @@
 import random
 import string
-
+import objectpath as objectpath
 import pytest
-
 from functions.Inicializar import Inicializar
 import json
 import requests
@@ -129,3 +128,24 @@ class Functions(Inicializar):
             print("Se esperaba: ")
             print(json.dumps(self.json_strings, indent=4))
             assert verificar == True
+
+    def new_compare_entity_values(self, path, esperado):
+        esperado = str(esperado)
+        try:
+            tree_obj = objectpath.Tree(self.json_response)
+            entity = tuple(tree_obj.execute('$.' + path))
+            PATH_VALUE =  str(entity[0])
+            print(entity)
+        except SyntaxError:
+            entity = str(None)
+            print("No se pudo obtener ningun valor de la busqueda")
+
+        if esperado == "NOT NULL":
+            assert str(PATH_VALUE) != None, f"El valor es Null: {PATH_VALUE} != {esperado}"
+            return
+
+        elif esperado == "NULL":
+            assert str(PATH_VALUE) == None, f"El valor no es Null: {PATH_VALUE} != {esperado}"
+            return
+        else:
+            assert PATH_VALUE == esperado, f"No es el valor esperado {path}: {PATH_VALUE} != {esperado}"

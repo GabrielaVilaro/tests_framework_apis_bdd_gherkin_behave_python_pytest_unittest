@@ -12,7 +12,8 @@ class Inicializar():
     data_body = basedir + u"/data/data_body"
     data_responses = basedir + u"/data/data_responses"
 
-    Environment = 'PetStore'
+    Environment = 'Twitter.test'
+    #Twitter.test
 
     if Environment == 'PetStore':
         # API
@@ -27,4 +28,22 @@ class Inicializar():
 
         Scenary = {
             'pet': '501'
+        }
+
+    if Environment == 'Twitter.test':
+        # API
+        API_hostAddressBase = "https://api.twitter.com/"
+
+        api_key = "8HRTI5U2gFOhJbNqOPqyw2Fjl"
+        api_secret = "Z068HodLUjbfOQytarJ62L6Svxx0dzGCEvgr2wHwf4StBpZSiF"
+
+        API_headers = {"Content-Type": "application/json"}
+
+        API_body = {}
+        API_subBody_dict = {}
+        API_subBody_array = []
+
+        Scenary = {
+            'User_Test1': 'StevenWilsonHQ',
+            'User_Test2': 'mysquality'
         }
