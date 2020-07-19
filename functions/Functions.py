@@ -127,7 +127,7 @@ class Functions(Inicializar):
             print(json.dumps(self.json_response, indent=4))
             print("Se esperaba: ")
             print(json.dumps(self.json_strings, indent=4))
-            assert verificar == True
+            assert verificar == False
 
     def new_compare_entity_values(self, path, esperado):
         esperado = str(esperado)

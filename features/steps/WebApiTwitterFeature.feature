@@ -19,3 +19,4 @@ Feature: Test Twitter
       | Entity                                              | Value                                                |
       | statuses.entities.urls[0].expanded_url              | https://twitter.com/i/web/status/1282630333343703041 |
       | statuses.entities.urls[0].display_url               | twitter.com/i/web/status/1…                          |
+    Then I compare the json File data_responses/StevenTweets with response
