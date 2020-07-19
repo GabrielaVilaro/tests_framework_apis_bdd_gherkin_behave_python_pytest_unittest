@@ -1,0 +1,16 @@
+{
+   "id": 2,
+   "category": {
+      "id": 2,
+      "name": "PINK"
+   },
+   "name": "PINK",
+   "photoUrls": [],
+   "tags": [
+      {
+         "id": 2,
+         "name": "PINK"
+      }
+   ],
+   "status": "available"
+}
