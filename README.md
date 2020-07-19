@@ -26,6 +26,7 @@ Twiitter: https://developer.twitter.com/ (Se debe solicitar a Twitter permisos p
      allure serve allure_result_folder
 
 <a href="https://ibb.co/R7C79G4"><img src="https://i.ibb.co/jHLHT9Z/Screen-Shot-2020-07-19-at-18-00-38.png" alt="Screen-Shot-2020-07-19-at-18-00-38" border="0"></a>
+<a href="https://ibb.co/L0Ws18f"><img src="https://i.ibb.co/GdLrR0j/Screen-Shot-2020-07-19-at-18-21-30.png" alt="Screen-Shot-2020-07-19-at-18-21-30" border="0"></a>
 
 **En el archivo functions/Inicializar.py se debe hacer un switch entre 'Twitter.test' y 'TetStore.test' para ver los correr respectivos tests de uno u otro.**
 
