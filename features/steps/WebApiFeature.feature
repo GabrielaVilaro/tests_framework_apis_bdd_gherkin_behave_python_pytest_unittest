@@ -8,19 +8,19 @@ Feature: Test WebApi
     Then I print out the results of the response
     Then The api response is 200
     And I assert response in entity status is NOT NULL
-    And I assert that response in entity category path id is 10
+    And I assert that response in entity category path id is 3
     And I assert that response in entity photoUrls path 0 is NOT NULL
-    And I assert that response in entity tags path 0 is {'id': 10, 'name': 'string'}
+    And I assert that response in entity tags path 0 is {'id': 1, 'name': 'Rita'}
     Then The elements <Entity> show the values <Value>
       | Entity | Value          |
-      | id     | 10             |
-      | name   | doggie         |
+      | id     | 501            |
+      | name   | Luna           |
       | status | available      |
     Then elements <Entity> in <Path> show the values <Value>
       | Entity      |Path   | Value      |
-      | category    |   id  | 10         |
+      | category    |   id  | 3          |
       | photoUrls   |   0   | NOT NULL   |
-    Then I compare the json File data_responses/pet10 with response
+    Then I compare the json File data_responses/pet501 with response
 
   @WebApi
   Scenario: Built Body Parameters Data

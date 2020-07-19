@@ -23,6 +23,8 @@ class Inicializar():
             'content-type': 'application/json',
         }
 
+        API_body = {}
+
         Scenary = {
-            'pet': '10'
+            'pet': '501'
         }

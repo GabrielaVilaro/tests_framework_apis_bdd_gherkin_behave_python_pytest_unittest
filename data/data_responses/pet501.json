@@ -1,0 +1,23 @@
+{
+   "id": 501,
+   "category": {
+      "id": 3,
+      "name": "Perros"
+   },
+   "name": "Luna",
+   "photoUrls": [
+      "url1",
+      "url2"
+   ],
+   "tags": [
+      {
+         "id": 1,
+         "name": "Rita"
+      },
+      {
+         "id": 2,
+         "name": "Lola"
+      }
+   ],
+   "status": "available"
+}
